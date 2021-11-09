@@ -1,0 +1,39 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.6'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.starlab.moon'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'io.projectreactor:reactor-test'
+
+	//lombok
+	implementation 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	// ch01
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
+
+	//ch02 data
+	implementation('org.springframework.boot:spring-boot-starter-data-mongodb-reactive')
+	testImplementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo'
+	implementation 'org.mongodb:mongodb-driver-sync:4.2.3'
+
+	// ch03 devtools
+	developmentOnly("org.springframework.boot:spring-boot-devtools")
+}
+
+test {
+	useJUnitPlatform()
+}
