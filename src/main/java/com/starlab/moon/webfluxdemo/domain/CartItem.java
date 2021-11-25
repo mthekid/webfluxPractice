@@ -21,6 +21,8 @@ public class CartItem {
         this.quantity++;
     }
 
+    public void decrement() { this.quantity--;}
+
     public CartItem(Item item) {
         this.item = item;
         this.quantity = 1;
